@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../styles";
+import { breakpoints, colors } from "../../styles";
 
 
 export const Image = styled.div`
@@ -12,7 +12,7 @@ export const Image = styled.div`
     width: 125px;
     height: 57px;
     margin-top: 40px;
-    margin-bottom: 180px;
+    margin-bottom: 160px;
   }
 `
 
@@ -28,5 +28,9 @@ export const Div = styled.div`
     line-height: 42px;
     font-weight: 900;
     color: ${colors.primary};
+
+    @media (max-width: ${breakpoints.smartphone}) {
+    font-size: 24px;
+  }
   }
 `

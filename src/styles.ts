@@ -5,6 +5,11 @@ export const colors = {
   secondary: '#FFEBD9'
 }
 
+export const breakpoints = {
+  smartphone: '480px',
+  tablet: '1024px'
+}
+
 export const GlobalCss = createGlobalStyle`
   * {
     padding: 0;
@@ -18,6 +23,10 @@ export const GlobalCss = createGlobalStyle`
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
+  }
+
+  body {
+    background-color: #FFF8F1;
   }
 
 `

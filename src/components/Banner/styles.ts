@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../styles";
 
 export const Card = styled.div`
   height: 280px;
@@ -6,6 +7,7 @@ export const Card = styled.div`
   background-size: cover;
   position: relative;
   margin-bottom: 56px;
+
   
   .container {
     position: relative;
@@ -31,7 +33,15 @@ export const Tag = styled.span`
   font-size: 32px;
   line-height: 37px;
   font-weight: 100;
-  color: #FFFFFF
+  color: #FFFFFF;
+
+  @media (max-width: ${breakpoints.smartphone}) {
+    font-size: 20px;
+    margin-left: 8px;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    margin-left: 16px;
+  }
 `
 
 export const Title = styled.h3`
@@ -39,5 +49,14 @@ export const Title = styled.h3`
   font-size: 32px;
   line-height: 37px;
   margin-top: 156px;
-  color: #FFFFFF
+  color: #FFFFFF;
+
+  @media (max-width: ${breakpoints.smartphone}) {
+    font-size: 20px;
+    margin-left: 8px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    margin-left: 16px;
+  }
 `

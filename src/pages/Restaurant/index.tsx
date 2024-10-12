@@ -5,7 +5,6 @@ import FoodList from "../../components/FoodList"
 import Header from "../../components/Header"
 
 
-
 const Restaurant = () => {
   
   return (

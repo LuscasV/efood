@@ -1,6 +1,5 @@
 
 import star from '../../assets/estrela.svg'
-import Button from '../Button';
 import Tag from '../Tag';
 import * as S from './styles'
 
@@ -21,7 +20,6 @@ const Restaurants = ({ title, image, tag, avaliation, description, id }: Props) 
       <S.Tags>
       {tag.map((info) => (<Tag key={info}>{info}</Tag>))}
       </S.Tags>
-      <div>
       <S.Infos>
         <nav>
           <S.Links>
@@ -34,8 +32,7 @@ const Restaurants = ({ title, image, tag, avaliation, description, id }: Props) 
           </S.Review>
       </S.Infos>
         <S.Description>{description}</S.Description>
-        <Button to={`/restaurant/${id}`}>Saiba mais</Button>
-      </div>
+        <S.ButtonLink to={`/restaurant/${id}`}>Saiba mais</S.ButtonLink>
     </S.Card>
     </div>
   );

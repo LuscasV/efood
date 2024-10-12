@@ -1,13 +1,24 @@
 import styled from "styled-components";
-import { colors } from "../../styles";
-import { Button } from "../Button/styles";
+import { breakpoints, colors } from "../../styles";
+import { Link } from "react-router-dom";
 
 
 export const Card = styled.div`
   max-width: 472px;
+  height: 408px;
   border: 1px solid ${colors.primary};
   position: relative;
   display: block;
+
+  @media (max-width: ${breakpoints.smartphone}) {
+    width: 95%;
+    height: 378px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 90%;
+    height: 396px;
+  }
   
   img {
     width: 100%
@@ -17,10 +28,6 @@ export const Card = styled.div`
     margin-left: 8px;
     margin-right: 2px;
     margin-bottom: 8px;
-  }
-
-  ${ Button } {
-    margin-left: 8px;
   }
 
 `
@@ -67,12 +74,28 @@ export const Description = styled.div`
   color: ${colors.primary};
   font-size: 14px;
   line-height: 22px;
-  margin-right: 8px;
   margin-bottom: 16px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 12px;
+  }
 `
 
 export const Tags = styled.div`
   position: absolute;
   top: 20px;
   right: 16px;
+`
+
+export const ButtonLink = styled(Link)`
+  padding: 4px 6px;
+  color: ${colors.secondary};
+  background-color: ${colors.primary};
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  text-decoration: none;
+  margin-left: 8px;
+  cursor: pointer;
 `

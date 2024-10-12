@@ -6,8 +6,10 @@ import * as S from './styles'
 const Header = () => {
   return (
     <S.Head>
-        <S.List>
-          <S.ListItem><h3>Restaurantes</h3></S.ListItem>
+        <S.List className='container'>
+          <S.ListItem>
+            <S.HomeLink to="/">Restaurantes</S.HomeLink>
+            </S.ListItem>
           <S.ListItem>
             <Link to="/">
               <img src={logo} alt="eFood" />

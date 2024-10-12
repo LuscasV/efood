@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { colors } from "../../styles";
+import { breakpoints, colors } from "../../styles";
+import { Link } from "react-router-dom";
 
 export const Head = styled.div`
   width: 100%;
@@ -10,11 +11,23 @@ export const Head = styled.div`
   flex-direction: column;
 `
 
+export const HomeLink = styled(Link)`
+  text-decoration: none;
+  color: ${colors.primary};
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 22px;
+`
+
 export const List = styled.ul`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   font-weight: 900;
+
+  @media (max-width: ${breakpoints.smartphone}) {
+    display: block;
+  }
 
 `
 
@@ -24,6 +37,13 @@ export const ListItem = styled.li`
   img {
     width: 125px;
     height: 57px;
-    margin-left: 58px;
+  }
+
+  span {
+    cursor: pointer;
+  }
+
+  @media (max-width: ${breakpoints.smartphone}) {
+    margin-bottom: 10px;
   }
 `

@@ -1,12 +1,19 @@
 import styled from "styled-components";
-import { colors } from "../../styles";
+import { breakpoints, colors } from "../../styles";
 
 export const Card = styled.div`
   width: 320px;
-  height: 338px;
+  padding: 8px;
   background-color: ${colors.primary};
   color: ${colors.secondary};
-  padding: 8px;
+
+  @media (max-width: ${breakpoints.smartphone}) {
+    width: 85%;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 90%;
+  }
 `
 
 export const Title = styled.p`
