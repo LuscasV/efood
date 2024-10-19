@@ -58,24 +58,24 @@ const Checkout = ({ onClose }: { onClose: () => void }) => {
 
       cardOwner: Yup.string()
         .min(5, 'O nome precisa ter pelo menos 5 caracteres')
-        .when((values, schema) =>
+        .when((_values, schema) =>
           payWith ? schema.required('O campo é obrigatorio') : schema
         ),
-      numbCard: Yup.string().when((values, schema) =>
+      numbCard: Yup.string().when((_values, schema) =>
         payWith ? schema.required('O campo é obrigatorio') : schema
       ),
       cardCode: Yup.string()
         .max(3, 'São permitidos até 3 dígitos')
-        .when((values, schema) =>
+        .when((_values, schema) =>
           payWith ? schema.required('O campo é obrigatorio') : schema
         ),
-      expiresMonth: Yup.string().when((values, schema) =>
+      expiresMonth: Yup.string().when((_values, schema) =>
         payWith ? schema.required('O campo é obrigatorio') : schema
       ),
-      expiresYear: Yup.string().when((values, schema) =>
+      expiresYear: Yup.string().when((_values, schema) =>
         payWith ? schema.required('O campo é obrigatorio') : schema
       )
-    }),
+    }), 
     onSubmit: (values) => {
       purchase({
         delivery: {
