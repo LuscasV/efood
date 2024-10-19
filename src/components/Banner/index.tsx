@@ -1,16 +1,40 @@
-import * as S from './styles'
+// Recursos externos
+import { useParams } from 'react-router-dom'
+import Loader from '../Loader'
 
-import restaurant from '../../assets/Banner La dolce vita trattoria.png'
+// Funções
+import { useGetFeatureEfoodQuery } from '../../services/api'
+
+// Estilos
+import { ImgBanner } from './styles'
+
+type Params = {
+  id: string
+}
 
 const Banner = () => {
-  return (
-    <S.Card style={{ backgroundImage: `url(${restaurant})` }}>
+  const { id } = useParams<Params>()
+  const { data: catalogoServico, isLoading } = useGetFeatureEfoodQuery(id || '')
 
-      <div className='container'>
-        <S.Tag>Italiana</S.Tag>
-        <S.Title>La dolce Vita Trattoria</S.Title>
+  if (isLoading) {
+    return <Loader />
+  }
+
+  if (!catalogoServico) {
+    return (
+      <div className="container">
+        <h3>Serviço não encontrado</h3>
       </div>
-    </S.Card>
+    )
+  }
+
+  return (
+    <div className="container">
+      <ImgBanner style={{ backgroundImage: `url(${catalogoServico.capa})` }}>
+        <h3>{catalogoServico.tipo}</h3>
+        <h1>{catalogoServico.titulo}</h1>
+      </ImgBanner>
+    </div>
   )
 }
 
